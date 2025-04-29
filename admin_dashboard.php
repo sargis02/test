@@ -1,0 +1,38 @@
+<?php
+session_start();
+include('db_connection.php');
+
+if (!isset($_SESSION['username'])) {
+    header("Location: login.html");
+    exit();
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <h2>Welcome, Admin</h2>
+        <nav>
+            <ul>
+                <li><a href="manage_products.php">Manage Products</a></li>
+                <li><a href="add_product.html">Add Product</a></li>
+                <li><a href="assign_identifiers.html">Assign Identifiers</a></li>
+                <li><a href="view_identifiers.php">View Assigned Identifiers</a></li>
+                <li><a href="record_temperature_humidity.html">Record Temperature & Humidity</a></li>
+                <li><a href="view_temperature_humidity.php">View Recorded Data</a></li>
+                <li><a href="record_quality_control.html">Record Quality Control</a></li>
+                <li><a href="view_quality_control.php">View Quality Control Data</a></li>
+                <li><a href="record_affected_batches.html">Record Affected Batches</a></li>
+                <li><a href="view_affected_batches.php">View Affected Batches</a></li>
+                <li><a href="logout.php">Log Out</a></li>
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>
